@@ -1,0 +1,27 @@
+<div class='row'>
+    <!-- MATRICULA -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.matricula.$invalid && !taxForm.matricula.$pristine }">
+        <div class='col-md-4'>
+            <label>Matrícula</label>
+            <input type="text" name="matricula" class="form-control" ng-model="user.carro.matricula" ng-required="user.temCarro" novalidate>
+        </div>
+        
+        <div class='col-md-2'>
+            <p ng-show="taxForm.matricula.$invalid && !taxForm.morada.$pristine" class="row help-block">Matricula obrigatória.</p>
+        </div>
+    </div>
+</div>
+
+<div class='row'>
+    <!-- VALOR -->
+    <div class="form-group">
+        <div class='col-md-4'>
+            <label>Valor</label>
+            <input type="currency" name="valor" class="form-control" ng-model="user.carro.valor" novalidate>
+        </div>
+        
+        <div class='col-md-2'>
+            <p ng-show="taxForm.valor.$invalid && !taxForm.valor.$pristine" class="row help-block">Valor obrigatório.</p>
+        </div>
+    </div>
+</div>

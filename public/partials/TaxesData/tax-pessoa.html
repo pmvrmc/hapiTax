@@ -1,0 +1,81 @@
+<div class='row'>
+    <!-- NAME -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.name.$invalid && !taxForm.name.$pristine }">
+        <div class='col-md-4'>
+            <label>Nome</label>
+            <input type="text" name="name" class="form-control" ng-model="user.name" required novalidate/>
+        </div>
+        <div class='col-md-2'>
+            <p ng-show="taxForm.name.$invalid && !taxForm.name.$pristine" class="row help-block">Campo obrigatório.</p>
+        </div>
+    </div>
+</div>
+        
+
+<div class='row'>
+    <!-- NIF -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.nif.$invalid && !taxForm.nif.$pristine }">
+        <div class='col-md-4'>
+            <label>NIF</label>
+            <input type="text" name="nif" class="form-control" ng-model="user.nif" ui-validate="'validateNif($value)'" novalidate/>
+        </div>
+    
+        <div class='col-md-2'>
+            <p ng-show="taxForm.nif.$invalid && !taxForm.nif.$pristine" class="help-block">Insira um nif válido.</p>
+        </div>
+    </div>
+</div>
+
+<div class='row'>
+    <!-- EMAIL -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.email.$invalid && !taxForm.email.$pristine }">
+        <div class='col-md-4'>   
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email"/>
+        </div>
+    
+        <div class='col-md-2'>
+            <p ng-show="taxForm.email.$invalid && !taxForm.email.$pristine" class="help-block">Insira um email válido.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class='row'>
+    <!-- SEXO -->
+    <div class='col-md-2'>
+        <label>Sexo</label>
+        <div class='row col-md-offset-2'>
+            <label class="btn btn-primary" ng-model="user.sexo" btn-radio="'M'" uncheckable>M</label>
+            <label class="btn btn-primary" ng-model="user.sexo" btn-radio="'F'" uncheckable>F</label>
+        </div>
+    </div>
+
+
+    <!-- ESTADO CIVIL -->
+    <div class="form-group">
+        <div class='col-md-2'>
+            <label>Estado Civil</label>
+            <select ng-model="user.estadoCivil" ng-options="estadoCivil for estadoCivil in estadosCivis">
+                <option value="">-- escolha Estado Civil --</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class='row'>
+    <!-- TEM CASA -->
+    <div class='col-md-4'>
+        <label>Possui algum dos seguintes items?</label>
+            <ul class="list-unstyled col-md-offset-1">
+                <li>
+                    <label class="btn btn-success" ng-model="user.temCasa" btn-radio="true" uncheckable>Casa</label>
+                </li>
+                
+                <li>
+                    <label class="btn btn-success" ng-model="user.temCarro" btn-radio="true" uncheckable>Carro</label>
+                </li>
+            </ul>
+    </div>
+</div>

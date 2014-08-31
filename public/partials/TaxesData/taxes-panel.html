@@ -1,0 +1,29 @@
+<section ng-controller='PanelController as panel'>
+	<ul class="nav nav-tabs" role="tablist">
+	  <li ng-class='{active:panel.isSelected(1)}'>
+		  <a href ng-click=panel.selectTab(1)>Detalhe Pessoa</a>
+	  </li>
+	  <li ng-class='{active:panel.isSelected(2)}' ng-show="user.temCasa">
+		  <a href ng-click=panel.selectTab(2)>Detalhe Casa</a>
+	  </li>
+	  <li ng-class='{active:panel.isSelected(3)}' ng-show="user.temCarro">
+		  <a href ng-click=panel.selectTab(3)>Detalhe Carro</a>
+	  </li>
+	</ul>
+	<form name='taxForm' ng-submit='submitForm(taxForm.$valid, user)' novalidate>
+		<div class='panel' ng-show='panel.isSelected(1)'>
+			<tax-pessoa></tax-pessoa>
+		</div>
+
+		<div class='panel' ng-show='panel.isSelected(2)'>
+			<tax-casa></tax-casa>
+		</div>
+
+		<div class='panel' ng-show='panel.isSelected(3)'>
+			<tax-carro></tax-carro>
+		</div>
+		
+		<!-- SUBMIT BUTTON -->
+		<button type="submit" class="btn btn-primary" ng-disabled='!taxForm.$valid'>Submit</button>
+	</form>
+</section>

@@ -1,0 +1,13 @@
+<div class='row'>
+    <!-- MORADA -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.morada.$invalid && !taxForm.morada.$pristine }">
+        <div class='col-md-4'>
+            <label>Morada</label>
+            <input type="text" name="morada" class="form-control" ng-model="user.casa.name" ng-required="user.temCasa">
+        </div>
+        
+        <div class='col-md-2'>
+            <p ng-show="taxForm.morada.$invalid && !taxForm.morada.$pristine" class="row help-block">Morada obrigatória.</p>
+        </div>
+    </div>
+</div>

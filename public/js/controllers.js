@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var appControllers = angular.module('App.controllers', []);
+var appControllers = angular.module('hapiTax.controllers', []);
 
 
 appControllers.controller('PanelController', function(){

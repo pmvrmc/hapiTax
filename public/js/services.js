@@ -2,4 +2,4 @@
 
 /* Services */
 
-var appServices = angular.module('App.services', []);
+var appServices = angular.module('hapiTax.services', []);

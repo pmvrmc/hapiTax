@@ -2,4 +2,4 @@
 
 /* Filters */
 
-var appFilters = angular.module('App.filters', []);
+var appFilters = angular.module('hapiTax.filters', []);

@@ -19,7 +19,6 @@
     "angular-bootstrap": "~0.11.0",
     "angular-ui-utils": "bower",
     "angular":"bower",
-    "angular-route":"bower",
-    "bootstrap":"bower"
+    "bootstrap":"3.2.0"
   }
 }

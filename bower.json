@@ -20,6 +20,6 @@
     "angular-ui-utils": "bower",
     "angular":"bower",
     "angular-route":"bower",
-    "bootstrap";"bower"
+    "bootstrap":"bower"
   }
 }

@@ -10,6 +10,19 @@
         </div>
     </div>
 </div>
+
+<div class='row'>
+    <!-- TELEFONE -->
+    <div class="form-group" ng-class="{ 'has-error' : taxForm.telefone.$invalid && !taxForm.telefone.$pristine }">
+        <div class='col-md-4'>
+            <label>Telefone</label>
+            <input type="text" name="telefone" class="form-control" ng-model="user.telefone" ui-validate="'validateTelefone($value)'" novalidate/>
+        </div>
+        <div class='col-md-2'>
+            <p ng-show="taxForm.telefone.$invalid && !taxForm.telefone.$pristine" class="row help-block">Introduza um telefone válido.</p>
+        </div>
+    </div>
+</div>
         
 
 <div class='row'>

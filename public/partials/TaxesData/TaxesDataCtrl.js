@@ -8,7 +8,7 @@ appControllers.controller('TaxesDataCtrl', ['$scope', 'TaxesDataFactory', functi
 		// check to make sure the form is completely valid
 		if (isValid) {
 			TaxesDataFactory.postTax(user).then(function(result){
-                alert(JSON.stringify(result.data));
+                alert("Post data: \n" + JSON.stringify(result.data));
             });
 		}
 		else {
@@ -20,8 +20,16 @@ appControllers.controller('TaxesDataCtrl', ['$scope', 'TaxesDataFactory', functi
       'Solteiro','Casado','Divorciado','Viúvo','Outro'
     ];
 	
+	$scope.validateTelefone = function($value){
+        if($value > 0 || $value ==''){
+            return true;
+        } else {
+            return false;
+        }
+    };
 	
-	$scope.validateNif = function($value){
+    
+    $scope.validateNif = function($value){
         if(typeof $value == "undefined" || $value == ''){
             return true;
         }

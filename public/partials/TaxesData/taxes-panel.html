@@ -10,7 +10,7 @@
 		  <a href ng-click=panel.selectTab(3)>Detalhe Carro</a>
 	  </li>
 	</ul>
-	<form name='taxForm' ng-submit='submitForm(taxForm.$valid, user)' novalidate>
+	<form class="form-horizontal" role="form" name='taxForm' ng-submit='submitForm(taxForm.$valid, user)' novalidate>
 		<div class='panel' ng-show='panel.isSelected(1)'>
 			<tax-pessoa></tax-pessoa>
 		</div>

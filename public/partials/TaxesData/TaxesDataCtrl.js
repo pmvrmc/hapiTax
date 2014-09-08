@@ -21,7 +21,7 @@ appControllers.controller('TaxesDataCtrl', ['$scope', 'TaxesDataFactory', functi
     ];
 	
 	$scope.validateTelefone = function($value){
-        if($value > 0 || $value ==''){
+        if($value > 0 || $value =='' || typeof $value === "undefined"){
             return true;
         } else {
             return false;

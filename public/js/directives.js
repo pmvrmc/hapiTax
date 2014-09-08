@@ -2,7 +2,7 @@
 
 /* Directives */
 
-var appDirectives = angular.module('App.directives', []);
+var appDirectives = angular.module('hapiTax.directives', []);
 
 appDirectives.directive('taxPessoa', function(){
     return{

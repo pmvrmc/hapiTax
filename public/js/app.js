@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('App', [
+angular.module('hapiTax', [
     'ngRoute',
-    'App.filters',
-    'App.services',
-    'App.directives',
-    'App.controllers',
+    'hapiTax.filters',
+    'hapiTax.services',
+    'hapiTax.directives',
+    'hapiTax.controllers',
     'ui.utils',
     'ui.bootstrap'
 ]).

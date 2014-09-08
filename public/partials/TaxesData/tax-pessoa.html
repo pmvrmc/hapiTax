@@ -1,62 +1,27 @@
-<div class='row'>
-    <!-- NAME -->
-    <div class="form-group" ng-class="{ 'has-error' : userNameForm.name.$invalid && !userNameForm.name.$pristine }">
-        <ng-form name="userNameForm">
-            <div class='col-md-4'>
-                <label for="userName" class='col-md-2 control-label'>Nome</label>
-                <input type="text" id="userName" placeholder="Nome Contribuinte" name="name" class="form-control col-md-offset-1" ng-model="user.name" required novalidate/>
+<div class='form-group' ng-repeat='formStructure in form' ng-class='{{formStructure.formGroupNgClass}}'>
+        <ng-form name='userFieldForm'>
+            <div class='row col-md-1'>
+                <label for='{{formStructure.labelFor}}'
+                       class='{{formStructure.labelClass}}'>{{formStructure.labelText}}</label>
             </div>
-            <div class='col-md-2'>
-                <span ng-show="userNameForm.name.$invalid && !userNameForm.name.$pristine" class="help-block">Campo obrigatório.</span>
-            </div>
-        </ng-form>
-    </div>
-</div>
-
-
-<div class='row'>
-    <!-- TELEFONE -->
-    <div class="form-group" ng-class="{ 'has-error' : userEmailForm.telefone.$invalid && !userEmailForm.telefone.$pristine }">
-        <ng-form name="userEmailForm">
-            <div class='col-md-4'>
-                <label for="userTelefone" class='col-md-2 control-label'>Telefone</label>
-                <input type="text" id="userTelefone" placeholder="Telefone do Contribuinte" name="telefone" class="form-control col-md-offset-1" ng-model="user.telefone" ui-validate="'validateTelefone($value)'" novalidate/>
-            </div>
-            <div class='col-md-2'>
-                <p ng-show="userEmailForm.telefone.$invalid && !userEmailForm.telefone.$pristine" class="help-block">Introduza um telefone válido.</p>
+            <div class='row'>
+                <div class='col-md-3'>
+                    <input type='{{formStructure.inputType}}'
+                           id='{{formStructure.inputId}}' 
+                           placeholder='{{formStructure.inputPlaceholder}}'
+                           name='field'
+                           ui-validate ='{{formStructure.inputValidate}}'
+                           class='{{formStructure.inputClass}}'
+                           ng-model='user[formStructure.inputNgModel]'
+                           ng-required='{{formStructure.inputRequired}}'/>
+                </div>
+                <div class='col-md-3'>
+                    <p></p>
+                    <span ng-show='{{formStructure.errorNgShow}}' class="help-block">{{formStructure.errorText}}</span>
+                </div>
             </div>
         </ng-form>
     </div>
-</div>
-        
-
-<div class='row'>
-    <!-- NIF -->
-    <div class="form-group" ng-class="{ 'has-error' : taxForm.nif.$invalid && !taxForm.nif.$pristine }">
-        <div class='col-md-4'>
-            <label>NIF</label>
-            <input type="text" name="nif" class="form-control" ng-model="user.nif" ui-validate="'validateNif($value)'" novalidate/>
-        </div>
-    
-        <div class='col-md-2'>
-            <p ng-show="taxForm.nif.$invalid && !taxForm.nif.$pristine" class="help-block">Insira um nif válido.</p>
-        </div>
-    </div>
-</div>
-
-<div class='row'>
-    <!-- EMAIL -->
-    <div class="form-group" ng-class="{ 'has-error' : taxForm.email.$invalid && !taxForm.email.$pristine }">
-        <div class='col-md-4'>   
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" ng-model="user.email"/>
-        </div>
-    
-        <div class='col-md-2'>
-            <p ng-show="taxForm.email.$invalid && !taxForm.email.$pristine" class="help-block">Insira um email válido.</p>
-        </div>
-    </div>
-</div>
 
 
 <div class='row'>
